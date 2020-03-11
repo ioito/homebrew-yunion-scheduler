@@ -1,4 +1,4 @@
-class YunionScheduler < Formula
+class YunionSchedulerAT31 < Formula
   desc "Yunion Cloud Region Scheduler Service"
   homepage "https://github.com/yunionio/onecloud.git"
   url "https://github.com/yunionio/onecloud.git",
