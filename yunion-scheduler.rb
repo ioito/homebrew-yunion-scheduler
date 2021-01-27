@@ -1,10 +1,9 @@
 class YunionScheduler < Formula
   desc "Yunion Cloud Region Scheduler Service"
   homepage "https://github.com/yunionio/onecloud.git"
-  url "https://github.com/yunionio/onecloud.git",
-    :tag      => "release/2.10.0"
   version_scheme 1
-  head "https://github.com/yunionio/onecloud.git"
+  head "https://github.com/yunionio/onecloud.git",
+    :branch      => "master"
 
   depends_on "go" => :build
 
@@ -13,7 +12,7 @@ class YunionScheduler < Formula
 
     (buildpath/"src/yunion.io/x/onecloud").install buildpath.children
     cd buildpath/"src/yunion.io/x/onecloud" do
-      system "make", "cmd/scheduler"
+      system "make", "GOOS=darwin", "cmd/scheduler"
       bin.install "_output/bin/scheduler"
       prefix.install_metafiles
     end
